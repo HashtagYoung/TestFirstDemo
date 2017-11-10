@@ -1,1 +1,60 @@
-Hey code1
+//Hey code1
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace TestList
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            List<string> ls = new List<string>();
+            ls.Add("AA");
+            ls.AddRange(new string[]{ "BB","CC","DD","EE","FF"});
+            ls.Insert(1, "GG");
+            ls.InsertRange(2,new string[]{ "HH","II"});
+            ls.Remove("EE");
+            ls.RemoveAt(2);
+            ls.RemoveRange(2, 2);
+            ls.Reverse();
+            ls.Sort();
+            ls.Add("FF");
+            Console.WriteLine(ls.IndexOf("FF"));
+
+            //string listFind = ls.Find(name =>  )//name是变量，代表的是mList
+            //{                              //中元素，自己设定
+            //    if (name.Length > 3)
+            //    {
+            //        return true;
+            //    }
+            //    return false;
+            //};
+            //Console.WriteLine(listFind);     //输出是Hunter
+            //Delegate string ListFind2(string name);
+            //foreach (string item in ls)
+            //{
+            //string listFind1 = item.Find(ListFind2);   //委托给ListFind函数
+            //Console.WriteLine(listFind1);           //输出是Hunter
+            //}
+
+            for (int i = 0; i < ls.Count; i++)
+            {
+                Console.WriteLine(ls[i]);
+            }
+            Console.ReadKey();
+        }
+
+        //ListFind函数：
+        public bool ListFind(string name)
+        {
+            if (name.Length > 1)
+            {
+                return true;
+            }
+            return false;
+        }
+    }
+}
